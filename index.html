@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Guia SQL</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=D8FP2Qj3fRoaE0sTPYWM6z72kIBBxR55JzT6Q1R3LQA0nNUDQ7DDfasONoXKhL5RnPUhvtPOnQSRdev_X3krcHuJlmsnPJAyuh9rmt6Pvnoi3DyLNM-t9IXZIq1v53f3Y9Gwh8ojsDwOoltrAqAwvOFbwDob9ZIuf6C65AK28NH6Lo8M3eZ28yZHMA6h9mseao8uQx2DpqFAK5N1PES2WUcNQCg2ilixTPNbIxWQ5m4AbDn70UAn0Jjpqp0P1qaNtv_I6LWJe3-T5IYoWOZzM8tKjugBO0nkl6AU-GT6Ae_beoyh_u5hi3wANfE2thmyPZpG0Zj6PMHkpi11gmLdpFjZW5f7tP-KwPAXij1BhVWE2Hntbjrz1YZbb7kcXuHRyQRRi6uiqZQrjOr6_72o6jVVfwk3KNjhhbJ0KUs44Trgs-K72x2YQYDyW_87Y82EfoPuwux2rypmFNhUBZ-MxN73dQJrn2K9BZrVNs5EOU8NutzyAy-9czcDJqSAA5-e3uq7ic9VtxkiXPXk0GoqJeCWvtR_NgrrvhhuXmFn5DDmXm_CCKPatZZfv0lcMzPmr2vPPAZpqar9JmyrRWWB8Jgr_kWDUSH-Qs4mQLCctkfcR4RdbY-C1aMISsaxlEKixFUpSjLJlGvNmVztkzE3Ls5ETWs8JecSll_8LtYS2DdHtHGKLq-YYfynqqk5sM88tStTB5R2lQ2MTqB6_dHu3xtOXt72hECkI2_tWKzuITJahKm8Byf_Ws0RYHZiqfGdCnif41Pcm_Hd_1peTC6MjVmP9EJAoQ6jesFvu4MktefC3name8zcFsTGowExtbOmX-Pa9xErB3joic_3D71kXebfP_DG9VvM6GaLGbTIWudau1lDz-L17Y6wLhTwXINrN8hTdDXNqXLEEhniOV-IY4qSZ7DR6ICc_OjBbVjyXe8ZrrldRUb7KTKzcQov7nPLLQIpnO9Yz4AakGbs3kOO6pO7Gdb7ddnFkzJHhuAHsCsBJNB7tUe-m-BW56wYq7iosRA67L9TCU8dCYUj4rz7icTcKc9BSWDte7JLDBNRk2_MXyjIYIorrypFQM4CFzqBlxMmWCMp3_p_HvT3kOBE2lMa_E7uGrdk-TuSVRWz8XXuf5epAEdWE2mfpm2bzMiA70cVxFUKixjoPfVPWdWmL2xG0H6xNAS8NnaJcI2MunlqDFd3EHFKqk7_UaVgHFJdXQHWo02l0Vw0iZqu7Ig0Q7OyxNDJIiBsmldcZDdTGugXi1-QjmPcbgwOd2-R9adgpyHmDWqFJrCcNir8kJFis4GmbXxah8kyHGvQhhgpSFBIBA__4lzKLPPATn46kVtK7Bctw-SCeAC9xBkslIRAHdsF3YE-kT8RhVdcwjls0zy-18w7DN8mtNQSgGAQ6R3GsifjsPVCAIG6kM-8fcwf20qIA71afdxLmYhAmNhBy91CLedNGo6LpP5tfIJtxyBajRRdVY80tHJQDJIko60VxBzTtZZvGBfSRG8WFaGSQW3ti57mz6u5q0geP1E38n2rlIjS8XKUcECKeckkUpHVWbe6IRl0QbPS7to2gB1H3iUJ5_hLy7xA4CpMrEjJLemTxTBkTDjKwDi4sTGxDdvxLStGeVkL3l5reE_s0bmAKfuRJXJMRIZVQTi06hHjbNdaGDSxmOgMEh5dGYdIiOTvww" nonce="c3d2c5d87565cc2033c517f2d2384f29" charset="UTF-8"></script><style>
+  <style>
     body {
       background-color: #f4f6f8;
       font-family: 'Segoe UI', sans-serif;
@@ -46,6 +46,30 @@
     }
     .section-block {
       margin-bottom: 2.5rem;
+    }
+
+    .button {
+      position: fixed; 
+      bottom: 20px; 
+      right: 20px; 
+      z-index: 10000; 
+      padding: 12px 18px; 
+      border: none; 
+      border-radius: 50px; 
+      background-color: rgba(245, 245, 245, 0.87);
+      cursor: pointer;
+    }
+
+    .button-desplegado {
+      position: fixed; 
+      bottom: 20px; 
+      right: 20px; 
+      z-index: 10000; 
+      padding: 12px 18px; 
+      border: none; 
+      border-radius: 50px; 
+      background-color: rgba(124, 124, 124, 0.87);
+      cursor: pointer;
     }
   </style>
 </head>
@@ -272,13 +296,40 @@ ORDER BY durada DESC;</code></pre>
       <li><strong>MAX():</strong> Retorna el valor màxim.</li>
     </ul>
   </section>
+<!-- Botón flotante para abrir/cerrar el chatbot -->
+<button id="toggleChatbot" class="button">  
+</button>
 
+<!-- Chatbot como sección normal (inicialmente oculta) -->
+<section id="chatbotContainer" style="display: none; margin-top: 2rem;">
   <iframe
-  src="https://www.chatbase.co/chatbot-iframe/0i0IW7bWtxQVlElPPigsp"
-  width="100%"
-  style="height: 100%; min-height: 700px"
-  frameborder="0"
-></iframe>
+    src="https://www.chatbase.co/chatbot-iframe/0i0IW7bWtxQVlElPPigsp"
+    width="100%"
+    height="600px"
+    frameborder="0"
+    style="border: none;"
+  ></iframe>
+</section>
+
+
+<script>
+  const toggleButton = document.getElementById('toggleChatbot');
+  const chatbot = document.getElementById('chatbotContainer');
+  let isChatOpen = false;
+
+  toggleButton.addEventListener('click', () => {
+    isChatOpen = !isChatOpen;
+    chatbot.style.display = isChatOpen ? 'block' : 'none';
+
+    toggleButton.classList.toggle('button-desplegado', isChatOpen);
+    toggleButton.classList.toggle('button', !isChatOpen);
+  });
+</script>
+
+
+
+
+
   
   
   </div>

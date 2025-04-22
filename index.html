@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guia SQL</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=D8FP2Qj3fRoaE0sTPYWM6z72kIBBxR55JzT6Q1R3LQA0nNUDQ7DDfasONoXKhL5RnPUhvtPOnQSRdev_X3krcHuJlmsnPJAyuh9rmt6Pvnoi3DyLNM-t9IXZIq1v53f3Y9Gwh8ojsDwOoltrAqAwvOFbwDob9ZIuf6C65AK28NH6Lo8M3eZ28yZHMA6h9mseao8uQx2DpqFAK5N1PES2WUcNQCg2ilixTPNbIxWQ5m4AbDn70UAn0Jjpqp0P1qaNtv_I6LWJe3-T5IYoWOZzM8tKjugBO0nkl6AU-GT6Ae_beoyh_u5hi3wANfE2thmyPZpG0Zj6PMHkpi11gmLdpFjZW5f7tP-KwPAXij1BhVWE2Hntbjrz1YZbb7kcXuHRyQRRi6uiqZQrjOr6_72o6jVVfwk3KNjhhbJ0KUs44Trgs-K72x2YQYDyW_87Y82EfoPuwux2rypmFNhUBZ-MxN73dQJrn2K9BZrVNs5EOU8NutzyAy-9czcDJqSAA5-e3uq7ic9VtxkiXPXk0GoqJeCWvtR_NgrrvhhuXmFn5DDmXm_CCKPatZZfv0lcMzPmr2vPPAZpqar9JmyrRWWB8Jgr_kWDUSH-Qs4mQLCctkfcR4RdbY-C1aMISsaxlEKixFUpSjLJlGvNmVztkzE3Ls5ETWs8JecSll_8LtYS2DdHtHGKLq-YYfynqqk5sM88tStTB5R2lQ2MTqB6_dHu3xtOXt72hECkI2_tWKzuITJahKm8Byf_Ws0RYHZiqfGdCnif41Pcm_Hd_1peTC6MjVmP9EJAoQ6jesFvu4MktefC3name8zcFsTGowExtbOmX-Pa9xErB3joic_3D71kXebfP_DG9VvM6GaLGbTIWudau1lDz-L17Y6wLhTwXINrN8hTdDXNqXLEEhniOV-IY4qSZ7DR6ICc_OjBbVjyXe8ZrrldRUb7KTKzcQov7nPLLQIpnO9Yz4AakGbs3kOO6pO7Gdb7ddnFkzJHhuAHsCsBJNB7tUe-m-BW56wYq7iosRA67L9TCU8dCYUj4rz7icTcKc9BSWDte7JLDBNRk2_MXyjIYIorrypFQM4CFzqBlxMmWCMp3_p_HvT3kOBE2lMa_E7uGrdk-TuSVRWz8XXuf5epAEdWE2mfpm2bzMiA70cVxFUKixjoPfVPWdWmL2xG0H6xNAS8NnaJcI2MunlqDFd3EHFKqk7_UaVgHFJdXQHWo02l0Vw0iZqu7Ig0Q7OyxNDJIiBsmldcZDdTGugXi1-QjmPcbgwOd2-R9adgpyHmDWqFJrCcNir8kJFis4GmbXxah8kyHGvQhhgpSFBIBA__4lzKLPPATn46kVtK7Bctw-SCeAC9xBkslIRAHdsF3YE-kT8RhVdcwjls0zy-18w7DN8mtNQSgGAQ6R3GsifjsPVCAIG6kM-8fcwf20qIA71afdxLmYhAmNhBy91CLedNGo6LpP5tfIJtxyBajRRdVY80tHJQDJIko60VxBzTtZZvGBfSRG8WFaGSQW3ti57mz6u5q0geP1E38n2rlIjS8XKUcECKeckkUpHVWbe6IRl0QbPS7to2gB1H3iUJ5_hLy7xA4CpMrEjJLemTxTBkTDjKwDi4sTGxDdvxLStGeVkL3l5reE_s0bmAKfuRJXJMRIZVQTi06hHjbNdaGDSxmOgMEh5dGYdIiOTvww" nonce="c3d2c5d87565cc2033c517f2d2384f29" charset="UTF-8"></script><style>
+    body {
+      background-color: #f4f6f8;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .sidebar {
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      background-color: #343a40;
+      padding-top: 2rem;
+    }
+    .sidebar a {
+      padding: 15px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      color: #ffffff;
+      display: block;
+    }
+    .sidebar a:hover {
+      background-color: #495057;
+    }
+    .content {
+      margin-left: 260px;
+      padding: 2rem;
+    }
+    pre {
+      background: #e9ecef;
+      padding: 1rem;
+      border-radius: 10px;
+      overflow-x: auto;
+    }
+    h2 {
+      margin-top: 2rem;
+      border-bottom: 2px solid #dee2e6;
+      padding-bottom: .5rem;
+    }
+    .section-block {
+      margin-bottom: 2.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <a href="#join">JOIN</a>
+    <a href="#group-by">GROUP BY</a>
+    <a href="#having">HAVING</a>
+    <a href="#subqueries">SUBCONSULTES</a>
+    <a href="#count">COUNT()</a>
+    <a href="#distinct">DISTINCT</a>
+    <a href="#like">LIKE</a>
+    <a href="#order-by">ORDER BY</a>
+    <a href="#funcions-agregades">ALTRES FUNCIONS</a>
+  </div>
+
+  <div class="content">
+    <h1 class="mb-4">📘 Guia SQL</h1>
+
+    <!-- JOIN -->
+    <section id="join" class="section-block">
+      <h2>1. JOIN (Unir taules)</h2>
+      <p>🔍 Permet combinar dades de dues taules que tenen una relació entre elles.</p>
+
+      <h5>▶ INNER JOIN</h5>
+      <p>🎯 Mostra només les files amb coincidència a les dues taules.</p>
+      <ul>
+        <li><code>projecte p</code>: Taula que conté els projectes</li>
+        <li><code>ambit a</code>: Taula que conté els àmbits</li>
+        <li><code>p.id_ambit = a.id_ambit</code>: Uneix cada projecte amb el seu àmbit</li>
+      </ul>
+      <p><strong>Consulta SQL (Input):</strong></p>
+      <pre><code>SELECT p.nom, a.nom AS ambit
+FROM projecte p
+INNER JOIN ambit a ON p.id_ambit = a.id_ambit;</code></pre>
+      <p><strong>Resultat esperat (Output):</strong></p>
+      <pre><code>+------------------+------------------+
+| nom              | ambit            |
++------------------+------------------+
+| Projecte Alpha   | Salut            |
+| Projecte Beta    | Educació         |
++------------------+------------------+</code></pre>
+
+      <h5>▶ LEFT JOIN</h5>
+      <p>🎯 Mostra tots els projectes, encara que no tinguin àmbit assignat (sortirà <code>NULL</code>).</p>
+      <p><strong>Consulta SQL (Input):</strong></p>
+      <pre><code>SELECT p.nom, a.nom AS ambit
+FROM projecte p
+LEFT JOIN ambit a ON p.id_ambit = a.id_ambit;</code></pre>
+      <p><strong>Resultat esperat (Output):</strong></p>
+      <pre><code>+------------------+------------------+
+| nom              | ambit            |
++------------------+------------------+
+| Projecte Alpha   | Salut            |
+| Sense Ambit      | NULL             |
++------------------+------------------+</code></pre>
+    </section>
+
+    <!-- GROUP BY -->
+    <section id="group-by" class="section-block">
+      <h2>2. GROUP BY (Agrupar per camp)</h2>
+      <p>🔍 Agrupa les files per una columna i permet fer càlculs per grup.</p>
+      <h5>▶ GROUP BY amb COUNT()</h5>
+      <p>🎯 Agrupa els projectes segons el seu àmbit i compta quants projectes hi ha a cada grup.</p>
+      <ul>
+        <li><code>a.nom</code>: Nom de l’àmbit</li>
+        <li><code>COUNT(*)</code>: Comptador de quants projectes té cada àmbit</li>
+      </ul>
+      <p><strong>Consulta SQL (Input):</strong></p>
+      <pre><code>SELECT a.nom AS ambit, COUNT(*) AS num_projectes
+FROM ambit a
+INNER JOIN projecte p ON a.id_ambit = p.id_ambit
+GROUP BY a.nom;</code></pre>
+      <p><strong>Resultat esperat (Output):</strong></p>
+      <pre><code>+------------------+------------------+
+| ambit            | num_projectes    |
++------------------+------------------+
+| Salut            | 3                |
+| Educació         | 2                |
++------------------+------------------+</code></pre>
+    </section>
+
+    <!-- HAVING -->
+    <section id="having" class="section-block">
+      <h2>3. HAVING (Filtrar agrupacions)</h2>
+      <p>🔍 Filtra resultats després d’un <code>GROUP BY</code> (no es pot fer amb <code>WHERE</code>).</p>
+      <h5>▶ Filtrar per COUNT()</h5>
+      <p>🎯 Mostra només els àmbits amb més de 3 projectes.</p>
+      <ul>
+        <li><code>HAVING COUNT(*) > 3</code>: Només mostra àmbits amb més de 3 projectes</li>
+      </ul>
+      <p><strong>Consulta SQL (Input):</strong></p>
+      <pre><code>SELECT a.nom AS ambit, COUNT(*) AS num_projectes
+FROM ambit a
+INNER JOIN projecte p ON a.id_ambit = p.id_ambit
+GROUP BY a.nom
+HAVING COUNT(*) > 3;</code></pre>
+      <p><strong>Resultat esperat (Output):</strong></p>
+      <pre><code>+------------------+------------------+
+| ambit            | num_projectes    |
++------------------+------------------+
+| Tecnologia       | 4                |
++------------------+------------------+</code></pre>
+    </section>
+
+    <!-- SUBCONSULTES -->
+    <section id="subqueries" class="section-block">
+      <h2>4. SUBCONSULTES (Consultes dins d’altres consultes)</h2>
+      <p>🔍 S’utilitzen per calcular valors que es comparen dins d’una altra consulta.</p>
+      <h5>▶ Filtrar amb una mitjana</h5>
+      <p>🎯 Filtra els projectes amb una durada superior a la mitjana de durada de tots els projectes.</p>
+      <ul>
+        <li><code>AVG(durada)</code>: Mitjana de durades de tots els projectes</li>
+        <li><code>durada > (...) </code>: Filtra els projectes més llargs que la mitjana</li>
+      </ul>
+      <p><strong>Consulta SQL (Input):</strong></p>
+      <pre><code>SELECT nom, durada
+FROM projecte
+WHERE durada > (
+    SELECT AVG(durada)
+    FROM projecte
+    );</code></pre>
+      <p><strong>Resultat esperat (Output):</strong></p>
+      <pre><code>+------------------+---------+
+| nom              | durada  |
++------------------+---------+
+| Projecte Alpha   | 14      |
++------------------+---------+</code></pre>
+    </section>
+
+    <!-- COUNT -->
+    <section id="count" class="section-block">
+      <h2>5. COUNT() (Comptar files)</h2>
+      <p>🔍 Retorna quantes files compleixen una condició (o total si no hi ha condició).</p>
+      <h5>▶ Comptar investigadors</h5>
+      <p>🎯 Mostra el nombre total d'investigadors.</p>
+      <ul>
+        <li><code>investigador</code>: Taula amb investigadors</li>
+      </ul>
+      <p><strong>Consulta SQL (Input):</strong></p>
+      <pre><code>SELECT COUNT(*) AS total_investigadors
+FROM investigador;</code></pre>
+      <p><strong>Resultat esperat (Output):</strong></p>
+      <pre><code>+-----------------------+
+| total_investigadors   |
++-----------------------+
+| 12                    |
++-----------------------+</code></pre>
+    </section>
+
+    <!-- DISTINCT -->
+    <section id="distinct" class="section-block">
+      <h2>6. DISTINCT (Eliminar duplicats)</h2>
+      <p>🔍 Evita repeticions mostrant valors únics.</p>
+      <h5>▶ Eliminar duplicats d'investigadors</h5>
+      <p>🎯 Mostra els noms i cognoms dels investigadors sense repeticions.</p>
+      <ul>
+        <li><code>i.nom, i.cognom</code>: Dades dels investigadors</li>
+      </ul>
+      <p><strong>Consulta SQL (Input):</strong></p>
+      <pre><code>SELECT DISTINCT i.nom, i.cognom
+FROM investigador i
+INNER JOIN participacio ip ON i.id_investigador = ip.id_investigador;</code></pre>
+      <p><strong>Resultat esperat (Output):</strong></p>
+      <pre><code>+-----------+------------+
+| nom       | cognom     |
++-----------+------------+
+| Anna      | Riera      |
+| Marc      | Prats      |
++-----------+------------+</code></pre>
+    </section>
+
+    <!-- LIKE -->
+    <section id="like" class="section-block">
+      <h2>7. LIKE (Filtrar per patró)</h2>
+      <p>🔍 Cerca textos que compleixin un patró. <code>%</code> vol dir qualsevol caràcter.</p>
+      <h5>▶ Filtrar noms que comencen per A</h5>
+      <p>🎯 Filtra els investigadors que tenen un nom que comença per "A".</p>
+      <ul>
+        <li><code>'A%'</code>: Noms que comencen per A</li>
+      </ul>
+      <p><strong>Consulta SQL (Input):</strong></p>
+      <pre><code>SELECT nom, cognom
+FROM investigador
+WHERE nom LIKE 'A%';</code></pre>
+      <p><strong>Resultat esperat (Output):</strong></p>
+      <pre><code>+-----------+------------+
+| nom       | cognom     |
++-----------+------------+
+| Anna      | Riera      |
+| Aina      | Costa      |
++-----------+------------+</code></pre>
+    </section>
+
+    <!-- ORDER BY -->
+    <section id="order-by" class="section-block">
+      <h2>8. ORDER BY (Ordenar resultats)</h2>
+      <p>🔍 Organitza les files segons una o més columnes (ASC per defecte, DESC per descendent).</p>
+      <h5>▶ Ordenar projectes per durada</h5>
+      <p>🎯 Ordena els projectes per durada de més a menys.</p>
+      <ul>
+        <li><code>ORDER BY durada DESC</code>: Ordena projectes per durada de més a menys</li>
+      </ul>
+      <p><strong>Consulta SQL (Input):</strong></p>
+      <pre><code>SELECT nom, durada
+FROM projecte
+ORDER BY durada DESC;</code></pre>
+      <p><strong>Resultat esperat (Output):</strong></p>
+      <pre><code>+------------------+---------+
+| nom              | durada  |
++------------------+---------+
+| Projecte Zeta    | 15      |
+| Projecte Alpha   | 12      |
++------------------+---------+</code></pre>
+    </section>
+
+<!-- FUNCIONS AGREGADES -->
+<section id="funcions-agregades" class="section-block">
+    <h2>6. ALTRES FUNCIONS</h2>
+    <ul>
+      <li><strong>AVG():</strong> Calcula el promig d’un conjunt de valors.</li>
+      <li><strong>SUM():</strong> Suma els valors d'una columna.</li>
+      <li><strong>MIN():</strong> Retorna el valor mínim.</li>
+      <li><strong>MAX():</strong> Retorna el valor màxim.</li>
+    </ul>
+  </section>
+
+  <iframe
+  src="https://www.chatbase.co/chatbot-iframe/0i0IW7bWtxQVlElPPigsp"
+  width="100%"
+  style="height: 100%; min-height: 700px"
+  frameborder="0"
+></iframe>
+  
+  
+  </div>
+</body>
+</html>
